@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="colorPrimary">#b2dfba</color>
+    <color name="colorPrimaryDark">#75c585</color>
+    <color name="colorAccent">#000</color>
+
+    <color name="greeeen">#477C47</color>
+    <color name="green2">#37C54D</color>
+    <color name="green2Dark">#00921C</color>
+    <color name="green2Light">#6FFA7B</color>
+    <color name="fab_pressed">#546e7a</color>
+    <color name="abc_secondary_text_material_dark">#546e7a</color>
+    <color name="one">#D8FF9D</color>
+    <color name="two">#B5FF9D</color>
+    <color name="three">#9DFFD4</color>
+    <color name="four">#D7E0E9</color>
+    <color name="five">#9DFFFB</color>
+    <color name="six">#9DDAFF</color>
+    <color name="blue2">#794FCF</color>
+    <color name="blue2dark">#0282EE</color>
+    <color name="cbar2">#0072D3</color>
+    <color name="cbar3">#402a6e</color>
+    <color name="gray1">#636363</color>
+    <color name="gray2">#777777</color>
+    <color name="icon_gray">#909396</color>
+    <color name="gray3">#b6b6b6</color>
+    <color name="gray4">#d9d9d9</color>
+    <color name="gray5">#e6e6e6</color>
+    <color name="green3">#36DBC0</color>
+    <color name="backg">#b5e6c9</color>
+    <color name="backg2">#FFEAEAEA</color>
+    <color name="backg3">#d9ffd2</color>
+    <color name="defaultcolor">#ededed</color>
+    <color name="defaultTextcolor">#808080</color>
+
+    <color name="tablecolor">#F5F5F5</color>
+    <color name="lowwhite">#d1d1d1</color>
+    <color name="color_primary_dark_low">#b6e9bd</color>
+
+
+    <color name="mapColorBack">#136735</color>
+    <color name="red">#e23e3b</color>
+    <color name="ob">#4DC43C</color>
+    <color name="colorDarkGreen">#22402C</color>
+    <color name="colorLightGreen">#009688</color>
+    <color name="colorAccentTrans">#a0b2dfba</color>
+    <!--<color name="colorAccentTrans">#a0009688</color>-->
+    <color name="colorPrimaryTrans">#AA22402C</color>
+    <color name="colorBlackTrans">#a0000000</color>
+
+    <color name="colorOnTrack">#E1DDF3</color>
+    <color name="colorOnWarning">#FEEEE3</color>
+    <color name="colorTextOnTrack">#7369E4</color>
+    <color name="colorTextOnWarning">#FC945D</color>
+
+    <color name="colorBtnEndCall">#E4546C</color>
+
+
+</resources>
