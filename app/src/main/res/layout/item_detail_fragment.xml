@@ -207,7 +207,7 @@
                                         app:backgroundTint="@null"
                                         android:text="@string/single_purchase"
                                         android:layout_marginBottom="@dimen/_10sdp"
-
+                                        android:id="@+id/BTN_OrderNow"
 
                                         />
 
