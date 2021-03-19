@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_15sdp"
-            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
             app:cardElevation="@dimen/_3sdp"
             app:cardUseCompatPadding="true"
             android:id="@+id/CV_ITEM">
@@ -40,23 +40,30 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="7.3"
+                    android:paddingLeft="@dimen/_5sdp"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/productName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Product Name"
                         android:textColor="@color/green2Dark"
                         android:textSize="@dimen/_12sdp" />
 
                     <TextView
-                        android:id="@+id/productDes"
+                        android:id="@+id/productPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ellipsize="marquee"
                         android:maxLines="2"
-                        android:text="AED 600"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/productDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="marquee"
+                        android:maxLines="2"
                         android:textSize="@dimen/_10sdp" />
 
                     <LinearLayout
@@ -105,8 +112,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/productImage"
-            android:layout_width="@dimen/_70sdp"
-            android:layout_height="@dimen/_70sdp"
+            android:layout_width="@dimen/_82sdp"
+            android:layout_height="@dimen/_82sdp"
             android:layout_marginTop="@dimen/_2sdp"
             android:tint="@color/greeeen" />
 

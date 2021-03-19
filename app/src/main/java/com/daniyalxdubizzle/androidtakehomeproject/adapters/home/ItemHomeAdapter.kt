@@ -15,7 +15,10 @@ import com.bumptech.glide.request.transition.Transition
 import com.daniyalxdubizzle.androidtakehomeproject.R
 import com.daniyalxdubizzle.androidtakehomeproject.data.model.response.ItemListResponse
 import com.daniyalxdubizzle.androidtakehomeproject.data.model.response.ItemResponse
+import com.daniyalxdubizzle.androidtakehomeproject.utilities.GeneralHelper
 import com.daniyalxdubizzle.androidtakehomeproject.utilities.GeneralHelper.Companion.loadImage
+import com.daniyalxdubizzle.androidtakehomeproject.utilities.capitalizeWords
+import org.w3c.dom.Text
 import javax.inject.Inject
 
 
@@ -28,12 +31,15 @@ class ItemHomeAdapter @Inject constructor(
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name = itemView.findViewById(R.id.productName) as TextView
+        val productPrice = itemView.findViewById(R.id.productPrice) as TextView
         val productImage = itemView.findViewById(R.id.productImage) as ImageView
         val CV_ITEM = itemView.findViewById(R.id.CV_ITEM) as CardView
+        val productDate = itemView.findViewById(R.id.productDate) as TextView
 
         fun bindItem(data: ItemListResponse) {
-            name.text = data.name
-
+            name.text = data.name.capitalizeWords
+            productPrice.text = data.price
+            productDate.text = GeneralHelper.dateParse(data.created_at)
             loadImage(
                 itemView.context,
                 data.image_urls_thumbnails.get(0),

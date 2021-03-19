@@ -49,8 +49,9 @@ public class ItemDetailFragment extends Fragment {
 
 
     private void setUp(ItemListResponse singleViewItem) {
-        GeneralHelper.Companion.loadImage(getActivity() , singleViewItem.getImage_urls().get(0) , binding.IVITEM);
-
+        GeneralHelper.Companion.loadImage(getActivity(), singleViewItem.getImage_urls().get(0), binding.IVITEM);
+        binding.TVITEMNAME.setText(singleViewItem.getName());
+        binding.TVITEMPRICE.setText(singleViewItem.getPrice());
 
     }
 
