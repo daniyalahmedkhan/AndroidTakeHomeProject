@@ -7,6 +7,6 @@ import retrofit2.http.GET
 interface RetrofitInterface {
 
     @GET("dynamodb-writer")
-    suspend fun getListItems() : Response<ItemResponse>
-    
+    suspend fun getListItems(): Response<ItemResponse>
+
 }

@@ -23,15 +23,15 @@
             android:layout_height="wrap_content" />
 
         <include
+            android:id="@+id/toolbar"
             layout="@layout/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:id="@+id/toolbar"/>
+            android:layout_height="?attr/actionBarSize" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/gray5"/>
+            android:background="@color/gray5" />
 
 
         <com.facebook.shimmer.ShimmerFrameLayout
@@ -44,17 +44,34 @@
             app:shimmer_duration="1000">
 
             <include
+                layout="@layout/item_loading_shimmer"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                layout="@layout/item_loading_shimmer"/>
+                android:layout_height="wrap_content" />
 
         </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/item_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:focusable="false"
+            android:textCursorDrawable="@null"
+            app:defaultQueryHint="Search Item by Name"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@null"
+            android:visibility="gone"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray5" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RV_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp" />
+            android:layout_marginTop="@dimen/_5sdp" />
 
     </LinearLayout>
 

@@ -1,10 +1,12 @@
 package com.daniyalxdubizzle.androidtakehomeproject.viewmodels
 
 import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.daniyalxdubizzle.androidtakehomeproject.data.model.remote.ResponseEvent
+import com.daniyalxdubizzle.androidtakehomeproject.data.model.response.ItemListResponse
 import com.daniyalxdubizzle.androidtakehomeproject.data.model.response.ItemResponse
 import com.daniyalxdubizzle.androidtakehomeproject.data.repo.ListingsItemRepo
 import com.daniyalxdubizzle.androidtakehomeproject.utilities.GeneralHelper
@@ -16,6 +18,7 @@ class ItemViewModel @ViewModelInject constructor(private val listingsItemRepo: L
     ViewModel() {
 
     val itemState: MutableLiveData<ResponseEvent<ItemResponse>> = MutableLiveData()
+    val itemPos: MutableLiveData<ItemListResponse> = MutableLiveData()
 
     init {
         searchItems()
@@ -44,6 +47,14 @@ class ItemViewModel @ViewModelInject constructor(private val listingsItemRepo: L
 
     }
 
+
+    fun setItemPos(item: ItemListResponse){
+        itemPos.value = item
+    }
+
+    fun getItemPosValue() : LiveData<ItemListResponse>{
+        return itemPos
+    }
 
 
 

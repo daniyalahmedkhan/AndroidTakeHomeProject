@@ -1,9 +1,11 @@
 package com.daniyalxdubizzle.androidtakehomeproject.utilities
 
+import android.app.Activity
 import android.content.Context
 import android.text.format.DateUtils
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.daniyalxdubizzle.androidtakehomeproject.R
 import org.json.JSONObject
@@ -58,6 +60,12 @@ class GeneralHelper {
                 return false
             }
             return false
+        }
+
+        fun hideKeyboardFrom(context: Context, view: View) {
+            val imm: InputMethodManager =
+                context.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0)
         }
 
     }
