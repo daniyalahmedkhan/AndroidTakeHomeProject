@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -116,7 +115,8 @@
                                 android:layout_height="wrap_content"
                                 android:drawableLeft="@drawable/rating"
                                 android:gravity="center"
-                                android:text="@string/item_rating" />
+                                android:text="@string/item_rating"
+                                android:textColor="@color/gray2"/>
 
 
                         </LinearLayout>
@@ -245,7 +245,6 @@
             </LinearLayout>
 
         </ScrollView>
-
 
 
     </RelativeLayout>

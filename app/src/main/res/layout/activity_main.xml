@@ -57,21 +57,22 @@
             android:background="@color/white"
             android:focusable="false"
             android:textCursorDrawable="@null"
+            android:visibility="gone"
             app:defaultQueryHint="Search Item by Name"
             app:iconifiedByDefault="false"
-            app:queryBackground="@null"
-            android:visibility="gone"/>
+            app:queryBackground="@null" />
 
         <View
+            android:id="@+id/item_search_border"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/gray5" />
+            android:background="@color/gray5"
+            android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RV_item"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp" />
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

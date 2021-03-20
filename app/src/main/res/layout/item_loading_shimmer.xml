@@ -206,14 +206,118 @@
                                     android:textSize="@dimen/_10sdp" />
 
 
-                                <ImageView
-                                    android:layout_width="@dimen/_11sdp"
-                                    android:layout_height="@dimen/_13sdp"
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    app:cardBackgroundColor="@color/gray6"
+                    app:cardCornerRadius="@dimen/_40sdp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp">
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_2sdp">
+
+                <androidx.cardview.widget.CardView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/gray4"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_3sdp"
+                    app:cardUseCompatPadding="true">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/_8sdp"
+                        android:weightSum="10">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="7.3"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/_5sdp">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/green2Dark"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="marquee"
+                                android:maxLines="2"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="marquee"
+                                android:maxLines="2"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:gravity="right"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:layout_marginStart="@dimen/_7sdp"
-                                    android:layout_marginTop="@dimen/_1sdp"
-                                    android:src="@drawable/rightarrow"
-                                    android:tint="@color/green2Dark" />
+                                    android:textColor="@color/green2Dark"
+                                    android:textSize="@dimen/_10sdp" />
+
 
                             </LinearLayout>
 
@@ -328,15 +432,6 @@
                                     android:textSize="@dimen/_10sdp" />
 
 
-                                <ImageView
-                                    android:layout_width="@dimen/_11sdp"
-                                    android:layout_height="@dimen/_13sdp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="@dimen/_7sdp"
-                                    android:layout_marginTop="@dimen/_1sdp"
-                                    android:src="@drawable/rightarrow"
-                                    android:tint="@color/green2Dark" />
-
                             </LinearLayout>
 
 
@@ -449,16 +544,6 @@
                                     android:textColor="@color/green2Dark"
                                     android:textSize="@dimen/_10sdp" />
 
-
-                                <ImageView
-                                    android:layout_width="@dimen/_11sdp"
-                                    android:layout_height="@dimen/_13sdp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="@dimen/_7sdp"
-                                    android:layout_marginTop="@dimen/_1sdp"
-                                    android:src="@drawable/rightarrow"
-                                    android:tint="@color/green2Dark" />
-
                             </LinearLayout>
 
 
@@ -570,138 +655,6 @@
                                     android:layout_gravity="center"
                                     android:textColor="@color/green2Dark"
                                     android:textSize="@dimen/_10sdp" />
-
-
-                                <ImageView
-                                    android:layout_width="@dimen/_11sdp"
-                                    android:layout_height="@dimen/_13sdp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="@dimen/_7sdp"
-                                    android:layout_marginTop="@dimen/_1sdp"
-                                    android:src="@drawable/rightarrow"
-                                    android:tint="@color/green2Dark" />
-
-                            </LinearLayout>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
-                    android:layout_marginTop="@dimen/_2sdp"
-                    app:cardBackgroundColor="@color/gray6"
-                    app:cardCornerRadius="@dimen/_40sdp" />
-
-            </RelativeLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp">
-
-            <RelativeLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/_2sdp">
-
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    app:cardBackgroundColor="@color/gray4"
-                    app:cardCornerRadius="@dimen/_10sdp"
-                    app:cardElevation="@dimen/_3sdp"
-                    app:cardUseCompatPadding="true">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:orientation="horizontal"
-                        android:paddingBottom="@dimen/_8sdp"
-                        android:weightSum="10">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2.5" />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="7.3"
-                            android:orientation="vertical"
-                            android:paddingLeft="@dimen/_5sdp">
-
-                            <TextView
-
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/green2Dark"
-                                android:textSize="@dimen/_12sdp" />
-
-                            <TextView
-
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:ellipsize="marquee"
-                                android:maxLines="2"
-                                android:textSize="@dimen/_10sdp" />
-
-                            <TextView
-
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:ellipsize="marquee"
-                                android:maxLines="2"
-                                android:textSize="@dimen/_10sdp" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="@dimen/_4sdp"
-                                android:gravity="right"
-                                android:orientation="horizontal">
-
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:textColor="@color/green2Dark"
-                                    android:textSize="@dimen/_10sdp" />
-
-
-                                <ImageView
-                                    android:layout_width="@dimen/_11sdp"
-                                    android:layout_height="@dimen/_13sdp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="@dimen/_7sdp"
-                                    android:layout_marginTop="@dimen/_1sdp"
-                                    android:src="@drawable/rightarrow"
-                                    android:tint="@color/green2Dark" />
 
                             </LinearLayout>
 

@@ -21,9 +21,10 @@ import kotlin.collections.ArrayList
 
 class ItemHomeAdapter @Inject constructor(
     private val itemList: ItemResponse,
-    val clickListener: (ItemListResponse, Int) -> Unit) : RecyclerView.Adapter<ItemHomeAdapter.ViewHolder>() , Filterable {
+    val clickListener: (ItemListResponse, Int) -> Unit
+) : RecyclerView.Adapter<ItemHomeAdapter.ViewHolder>(), Filterable {
 
-    var itemListFilter : List<ItemListResponse> = ArrayList<ItemListResponse>()
+    var itemListFilter: List<ItemListResponse> = ArrayList<ItemListResponse>()
 
     init {
         itemListFilter = itemList.results
@@ -31,11 +32,11 @@ class ItemHomeAdapter @Inject constructor(
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val name = itemView.findViewById(R.id.productName) as TextView
-        val productPrice = itemView.findViewById(R.id.productPrice) as TextView
-        val productImage = itemView.findViewById(R.id.productImage) as ImageView
+        private val name = itemView.findViewById(R.id.productName) as TextView
+        private val productPrice = itemView.findViewById(R.id.productPrice) as TextView
+        private val productImage = itemView.findViewById(R.id.productImage) as ImageView
+        private val productDate = itemView.findViewById(R.id.productDate) as TextView
         val CV_ITEM = itemView.findViewById(R.id.CV_ITEM) as CardView
-        val productDate = itemView.findViewById(R.id.productDate) as TextView
 
         fun bindItem(data: ItemListResponse) {
             name.text = data.name.capitalizeWords
@@ -73,7 +74,9 @@ class ItemHomeAdapter @Inject constructor(
                 } else {
                     val resultList = ArrayList<ItemListResponse>()
                     for (row in itemList.results.indices) {
-                        if (itemList.results[row].name.toLowerCase(Locale.ROOT).contains(charSearch.toLowerCase(Locale.ROOT))) {
+                        if (itemList.results[row].name.toLowerCase(Locale.ROOT)
+                                .contains(charSearch.toLowerCase(Locale.ROOT))
+                        ) {
                             resultList.add(itemList.results[row])
                         }
                     }

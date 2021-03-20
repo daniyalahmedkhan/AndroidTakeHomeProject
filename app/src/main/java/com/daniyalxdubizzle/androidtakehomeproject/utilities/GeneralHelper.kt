@@ -49,15 +49,15 @@ class GeneralHelper {
 
 
         fun isDateParse(date: String): Boolean {
-            try {
-            val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSS")
-            sdf.setTimeZone(TimeZone.getTimeZone("GMT"))
+            return try {
+                val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSS")
+                sdf.setTimeZone(TimeZone.getTimeZone("GMT"))
 
                 val time: Long = sdf.parse(date).getTime()
                 val now = System.currentTimeMillis()
-                return true
+                true
             } catch (e: ParseException) {
-                return false
+                false
             }
             return false
         }

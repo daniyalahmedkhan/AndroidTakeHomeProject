@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,16 +13,12 @@ import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
-import com.bumptech.glide.Glide;
 import com.daniyalxdubizzle.androidtakehomeproject.R;
-import com.daniyalxdubizzle.androidtakehomeproject.data.model.response.ItemListResponse;
 import com.daniyalxdubizzle.androidtakehomeproject.databinding.ItemDetailFragmentBinding;
 import com.daniyalxdubizzle.androidtakehomeproject.utilities.CommonExtentionKt;
 import com.daniyalxdubizzle.androidtakehomeproject.utilities.GeneralHelper;
 import com.daniyalxdubizzle.androidtakehomeproject.viewmodels.ItemViewModel;
-import com.daniyalxdubizzle.androidtakehomeproject.viewmodels.ItemViewModelProviderFactory;
 
 import javax.inject.Inject;
 
@@ -31,8 +27,6 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class ItemDetailFragment extends Fragment {
 
-
-    public ItemListResponse singleViewItem = null;
     ItemDetailFragmentBinding binding;
     private boolean isFav = false;
     private boolean isCart = false;
@@ -50,11 +44,18 @@ public class ItemDetailFragment extends Fragment {
         binding = DataBindingUtil.inflate(
                 inflater, R.layout.item_detail_fragment, container, false);
 
+        /*
+         * ViewModel factory to initialize
+         * */
         ItemViewModel viewModel = new ViewModelProvider(getActivity()).get(ItemViewModel.class);
 
 
         GeneralHelper.Companion.hideKeyboardFrom(getActivity(), binding.getRoot());
         viewListeners();
+
+        /*
+         * Setting up views data by fetching from ViewModel to make lifecycle aware
+         * */
         setUp(viewModel);
 
         return binding.getRoot();
@@ -72,6 +73,10 @@ public class ItemDetailFragment extends Fragment {
         binding.TVITEMPRICE.setText(itemViewModel.getItemPosValue().getValue().getPrice());
     }
 
+
+    /*
+     * Handle view click listeners
+     * */
     private void viewListeners() {
         binding.CVFAV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +103,16 @@ public class ItemDetailFragment extends Fragment {
                     isCart = true;
                     binding.IVCART.setColorFilter(ContextCompat.getColor(getContext(), R.color.green2));
                 }
+            }
+        });
+
+        binding.BTNOrderNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.views_animation));
+                Toast.makeText(getActivity(), "Ordered", Toast.LENGTH_SHORT).show();
+                getActivity().getSupportFragmentManager().popBackStack();
+
             }
         });
 

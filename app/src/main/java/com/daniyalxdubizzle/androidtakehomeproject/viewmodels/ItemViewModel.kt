@@ -24,7 +24,9 @@ class ItemViewModel @ViewModelInject constructor(private val listingsItemRepo: L
         searchItems()
     }
 
-
+    /*
+    * To make invoke repository and handle api 3 events Success, Failure, Exception
+    * */
     private fun searchItems() {
         itemState.value = ResponseEvent.Loading
         viewModelScope.launch {
@@ -47,11 +49,16 @@ class ItemViewModel @ViewModelInject constructor(private val listingsItemRepo: L
 
     }
 
-
+    /*
+    * Setting ItemPos from list click event which has to view in detail screen
+    * */
     fun setItemPos(item: ItemListResponse){
         itemPos.value = item
     }
 
+    /*
+    * View Item info on detail screen by fetching from this method
+    * */
     fun getItemPosValue() : LiveData<ItemListResponse>{
         return itemPos
     }

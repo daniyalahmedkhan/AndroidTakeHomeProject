@@ -55,7 +55,7 @@ class MainActivityTest{
         onView(withId(R.id.RV_item)).check(matches(withEffectiveVisibility(Visibility.VISIBLE)))
     }
 
-    /* Check RecyclerView On Item Click Listner Open the Detail Fragment */
+    /* Check RecyclerView On Item Click Listener Open the Detail Fragment */
     @Test
     fun navDetailScreen_fromMainActivityTest(){
 
@@ -68,7 +68,7 @@ class MainActivityTest{
 
     }
 
-    /* Check on Back Pressed Pop the Fragment and Resume Main Activity*/
+    /* Check on Back Pressed Pop the Fragment and Resume Main Activity */
     @Test
     fun navMainScreen_fromDetailScreenTest(){
 
@@ -85,7 +85,7 @@ class MainActivityTest{
 
     }
 
-    /* Helping Func for RecyclerView Click*/
+    /* Helping Func for RecyclerView Click */
     private fun clickOnViewChild(viewId: Int) = object : ViewAction {
         override fun getConstraints() = null
 

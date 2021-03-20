@@ -1,6 +1,7 @@
 package com.daniyalxdubizzle.androidtakehomeproject.ui
 
 
+import android.nfc.Tag
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
@@ -28,18 +29,28 @@ import org.jetbrains.anko.toast
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-
+    /*
+    * This is Home First Screen Activity Where Api hit to fetch records through ViewModel by using Dagger-Hilt
+    * */
     private val itemViewModel: ItemViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
     private lateinit var itemHomeAdapter: ItemHomeAdapter
+    private val TAG = "FIRST"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        /*
+        *  Data Binding
+        * */
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         setUpInitials()
 
+        /*
+        * ViewModel mutable list observer and using sealed class 3 objects
+        * */
         itemViewModel.itemState.observe(this, Observer {
             when (it) {
 
@@ -52,16 +63,17 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 is ResponseEvent.Success -> {
-                    // itemHomeAdapter = ItemHomeAdapter(it.data!!, it.data.results)
                     binding.shimmerViewContainer.stopShimmer()
                     binding.shimmerViewContainer.visibility = View.GONE
 
+
+                    /*
+                    * List item click handle and open detail fragment by setting viewModel position item
+                    * */
                     itemHomeAdapter =
                         ItemHomeAdapter(it.data!!) { itemDto: ItemListResponse, position: Int ->
                             openDetailFragment(ItemDetailFragment.newInstance())
                             itemViewModel.setItemPos(itemDto)
-                            //  binding.toolbar.visibility = View.GONE
-                            System.out.println("#########" + GeneralHelper.dateParse(itemDto.created_at))
                         }
                     binding.RVItem.adapter = itemHomeAdapter
 
@@ -74,6 +86,9 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        /*
+        * Search View in Toolbar to sort list items
+        * */
         binding.itemSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
@@ -88,21 +103,31 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    /*
+    * Fragment Management
+    * */
     private fun openDetailFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().add(R.id.container, fragment)
-            .addToBackStack(if (supportFragmentManager.backStackEntryCount == 0) "First" else null)
+            .addToBackStack(if (supportFragmentManager.backStackEntryCount == 0) TAG else null)
             .commit()
     }
 
+    /*
+    * Views Initialize and Click Handles
+    * */
     private fun setUpInitials() {
         binding.RVItem.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         binding.RVItem.setHasFixedSize(true)
 
-        binding.toolbar.home_tb_title.text = "Home"
+        binding.toolbar.home_tb_title.text = resources.getString(R.string.HOME)
         binding.toolbar.home_tb_search_icon.setOnClickListener {
-            if (binding.itemSearch.visibility == View.GONE)
+            if (binding.itemSearch.visibility == View.GONE) {
                 binding.itemSearch.visibility = View.VISIBLE
-            else binding.itemSearch.visibility = View.GONE
+                binding.itemSearchBorder.visibility = View.VISIBLE
+            } else {
+                binding.itemSearch.visibility = View.GONE
+                binding.itemSearchBorder.visibility = View.GONE
+            }
         }
 
     }
