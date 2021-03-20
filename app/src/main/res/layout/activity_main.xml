@@ -28,12 +28,6 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/gray5" />
-
-
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmer_view_container"
             android:layout_width="wrap_content"
@@ -59,6 +53,7 @@
             android:textCursorDrawable="@null"
             android:visibility="gone"
             app:defaultQueryHint="Search Item by Name"
+            app:queryHint="Search Item by Name"
             app:iconifiedByDefault="false"
             app:queryBackground="@null" />
 

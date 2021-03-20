@@ -17,6 +17,8 @@
         <item name="android:windowFullscreen">false</item>
         <item name="hintTextColor">@color/gray3</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
         <!-- Customize your theme here. -->
     </style>
 

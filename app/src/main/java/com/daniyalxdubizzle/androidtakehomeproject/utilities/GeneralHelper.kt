@@ -7,6 +7,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.daniyalxdubizzle.androidtakehomeproject.R
 import org.json.JSONObject
 import java.text.ParseException
@@ -28,6 +29,7 @@ class GeneralHelper {
         fun loadImage(context: Context, url: String, view: ImageView) {
             Glide.with(context)
                 .load(url)
+                .diskCacheStrategy(DiskCacheStrategy.DATA)
                 .centerCrop()
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .into(view)
